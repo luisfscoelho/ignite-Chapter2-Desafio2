@@ -14,7 +14,7 @@ defmodule Flightex.Bookings.Create do
   defp save_user({:ok, %Booking{id: id} = booking}) do
     BookingAgent.save(booking)
 
-    {:ok, "Booking created"}
+    {:ok, id}
   end
 
   defp save_user({:error, _reason} = error), do: error
